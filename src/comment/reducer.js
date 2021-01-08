@@ -1,41 +1,41 @@
-import { createActions, createReducer } from "reduxsauce";
+import { createActions, createReducer } from 'reduxsauce';
 const INITIAL_STATE = {
   data: [],
-  error: "",
-  isLoading: false
+  error: '',
+  isLoading: false,
 };
 const { Types, Creators } = createActions({
-    comments: null,
-    commentsSuccess: ["commentdata"],
-    commentsFailure:["error"]
+  comments: null,
+  commentsSuccess: ['data'],
+  commentsFailure: ['error'],
 });
 export const commentActions = {
   Types,
-  Creators
+  Creators,
 };
 const comments = (state) => {
-    return {
-      ...state,
-      isLoading: true,
-      error: ""
-    };
+  return {
+    ...state,
+    isLoading: true,
+    error: '',
   };
-  const commentsSuccess = (state, response) => {
-    return {
-      ...state,
-      data: response.data,
-      isLoading: false
-    };
+};
+const commentsSuccess = (state, response) => {
+  return {
+    ...state,
+    data: response.data,
+    isLoading: false,
   };
-  const commentsFailure = (state, error) => {
-    return {
-      ...state,
-      isLoading: false,
-      error
-    };
+};
+const commentsFailure = (state, error) => {
+  return {
+    ...state,
+    isLoading: false,
+    error,
   };
+};
 export const commentReducer = createReducer(INITIAL_STATE, {
-    [Types.COMMENTS]: comments,
-    [Types.COMMENTS_FAILURE]: commentsSuccess,
-    [Types.COMMENTS_FAILURE]: commentsFailure
+  [Types.COMMENTS]: comments,
+  [Types.COMMENTS_SUCCESS]: commentsSuccess,
+  [Types.COMMENTS_FAILURE]: commentsFailure,
 });

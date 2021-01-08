@@ -1,0 +1,21 @@
+.mainDivAuthor {
+  font-family: "Arial";
+  width: 98%;
+}
+.authorDiv {
+  font-family: "Arial";
+  width: 96%;
+  border: 1px solid #cccddd;
+  margin: 2%;
+  border-radius: 5px;
+  padding: 5px;
+}
+.authorDetails {
+  width: 20%;
+}
+.left {
+  float: left;
+}
+.authorData {
+  overflow: hidden;
+}

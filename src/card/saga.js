@@ -1,6 +1,6 @@
 import { put, call } from "redux-saga/effects";
 import { cardActions } from "./reducer";
-import { getCardApi, getCommentsApi } from "../apisause";
+import { getCardApi } from "../apisause";
 
 export function* getCardSaga() {
     try {

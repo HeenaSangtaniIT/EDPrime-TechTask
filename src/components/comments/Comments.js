@@ -1,16 +1,19 @@
-import React from "react";
-import "./comments.css";
+import React from 'react';
+import './comments.css';
 
-const Comments = (
-  commentAuthorName,
-  commentEmail,
-  commentBody
-) => {
+const Comments = ({ commentAuthorName, commentEmail, commentBody }) => {
   return (
-    <div className="postDiv">
-      <div>{commentAuthorName}</div>
-      <div>{commentEmail}</div>
-      <div>{commentBody}</div>
+    <div className="mainDivComment">
+    <div className='commentDiv'>
+      <div className="commentAuthor">
+            <div>Author: {commentAuthorName}</div>
+        </div>
+        <div className="commentBody">
+            <div>{commentBody}</div>
+            <br />
+            <div>{commentEmail}</div>
+        </div>
+    </div>
     </div>
   );
 };

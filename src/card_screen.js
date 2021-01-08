@@ -27,19 +27,17 @@ const CardScreen = ({ data, error, isLoading, card }) => {
             <li className="navBarLI">
               <Link to="/">Posts</Link>
             </li>
-            <li className="navBarLI">
+            {/* <li className="navBarLI">
               <Link to="/comments/1">Comments</Link>
-            </li>
+            </li> */}
             <li className="navBarLI">
               <Link to="/users">Authors</Link>
             </li>
           </ul>
         </nav>
-
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
+        
         <Switch>
-          <Route path="/comments">
+          <Route path="/comments/:id" >
             <CommentScreen />
           </Route>
           <Route path="/users">

@@ -8,16 +8,13 @@ const Authors = ({
   authorWebsite
 }) => {
   return (
-    <div className="authorDiv">
-      <a href="/comments" className="authorLink">
-        <div className="authorTitle">
-            <div>{authorName}</div>
-            <div>{authorContact}</div>
-            <div>{authorEmail}</div>
-            <div>{authorWebsite}</div>
+    <div className="mainDivAuthor">
+        <div className="authorDiv">
+            <div className="authorData"><div className="authorDetails left"><b>Name: </b></div><div className="left">{authorName}</div></div>
+            <div className="authorData"><div className="authorDetails left"><b>Contact: </b></div><div className="left">{authorContact}</div></div>
+            <div className="authorData"><div className="authorDetails left"><b>Email: </b></div><div className="left">{authorEmail}</div></div>
+            <div className="authorData"><div className="authorDetails left"><b>Website: </b></div><div className="left">{authorWebsite}</div></div>
         </div>
-      </a>
-      {/* </Link> */}
     </div>
   );
 };

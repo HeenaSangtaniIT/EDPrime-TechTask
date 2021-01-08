@@ -1,25 +1,25 @@
-import React, { useEffect } from "react";
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import { authorActions } from "./author/reducer";
-import Authors from "./components/author/Authors";
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { authorActions } from './author/reducer';
+import Authors from './components/author/Authors';
 
-const AuthorScreen = ({ authordata, authors }) => {
-  console.log("data", authordata);
+const AuthorScreen = ({ data, authors }) => {
+  console.log('dataofauthors', data);
   useEffect(() => {
     authors();
   }, []);
   return (
-    <div className="mainDivPost">
-      <div className="headingDiv">Authors</div>
-      {authordata.map(item => {
-          console.log("item.name",item)
+    <div className='mainDivPost'>
+      <div className='headingDiv'>Authors</div>
+      {data.map((item) => {
+        console.log('item.name', item);
         return (
           <Authors
-          authorName={item.name}
-          authorContact={item.phone}
-          authorEmail={item.email}
-          authorWebsite={item.website}
+            authorName={item.name}
+            authorContact={item.phone}
+            authorEmail={item.email}
+            authorWebsite={item.website}
           />
         );
       })}
@@ -27,18 +27,17 @@ const AuthorScreen = ({ authordata, authors }) => {
   );
 };
 const mapStateToProps = ({ authors }) => {
-    console.log("authors",authors)
-  const { authordata, error, isLoading } = authors;
-  console.log("error data",authordata)
-  return { authordata, error, isLoading };
+  const { data, error, isLoading } = authors;
+
+  return { data, error, isLoading };
 };
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch) => ({
   ...bindActionCreators(
     {
-      ...authorActions.Creators
+      ...authorActions.Creators,
     },
     dispatch
-  )
+  ),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(AuthorScreen);

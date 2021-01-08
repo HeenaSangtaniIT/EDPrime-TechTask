@@ -1,0 +1,22 @@
+.mainDivComment {
+  font-family: "Arial";
+  width: 98%;
+  padding: 10px;
+}
+
+.commentAuthor {
+  font-weight: bold;
+  background-color: #cccccc;
+  padding: 10px;
+  border-radius: 8px 8px 0px 0px;
+}
+.commentBody {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+.postData {
+  margin: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+}

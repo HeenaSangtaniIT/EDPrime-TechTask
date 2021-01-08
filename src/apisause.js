@@ -1,4 +1,5 @@
 import { create } from "apisauce";
+
 const api = create({
     baseURL: "https://jsonplaceholder.typicode.com",
     headers: {
@@ -24,9 +25,10 @@ export const getCardApi = async () => {
     return response;
 }
 export const getCommentsApi = async () => {
+    let postID = window.location.href.split("/").pop();
     let commentresponse = { commentdata: null, error: "" };
     await api
-        .get("/comments")
+        .get(`/comments?postId=${postID}`)
         .then((apiResponse) => {
             console.log("apiResponse",apiResponse);
             if (apiResponse.ok) {
