@@ -5,7 +5,6 @@ import Comments from "./components/comments/Comments";
 
 function App() {
   return (
-    // <Router>
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -21,13 +20,7 @@ function App() {
           Learn React
         </a>
       </header>
-    
-        {/* <div>
-        <Route path="/" exact component={Posts} />
-        <Route path="/comments" exact component={Comments} />
-        </div>  */}
     </div>
-    // </Router>
   );
 }
 

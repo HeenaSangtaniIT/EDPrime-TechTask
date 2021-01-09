@@ -4,16 +4,13 @@ import { PersistGate } from "redux-persist/integration/react";
 import { Provider } from "react-redux";
 import { configureStore } from "./store";
 import CardScreen from './card_screen';
-import AuthorScreen from './author_screen';
-import CommentScreen from './comment_screen';
 import reportWebVitals from './reportWebVitals';
+
 const { store, persistor } = configureStore();
 ReactDOM.render(
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
       <CardScreen />
-      {/* <AuthorScreen /> */}
-      {/* <CommentScreen /> */}
     </PersistGate>
   </Provider>,
   document.getElementById('root')

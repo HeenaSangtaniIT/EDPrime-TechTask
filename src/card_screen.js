@@ -15,7 +15,6 @@ import {
 } from "react-router-dom";
 
 const CardScreen = ({ data, error, isLoading, card }) => {
-  console.log("data", data);
   useEffect(() => {
     card();
   }, []);
@@ -27,9 +26,6 @@ const CardScreen = ({ data, error, isLoading, card }) => {
             <li className="navBarLI">
               <Link to="/">Posts</Link>
             </li>
-            {/* <li className="navBarLI">
-              <Link to="/comments/1">Comments</Link>
-            </li> */}
             <li className="navBarLI">
               <Link to="/users">Authors</Link>
             </li>
@@ -48,7 +44,7 @@ const CardScreen = ({ data, error, isLoading, card }) => {
               <div className="headingDiv">Posts</div>
               {data.map(item => {
                 return (
-                  <Posts
+                  <Posts key={item.id}
                     postTitle={item.title}
                     postBody={item.body}
                     postId={item.id}

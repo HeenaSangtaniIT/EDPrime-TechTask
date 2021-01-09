@@ -5,7 +5,6 @@ import { authorActions } from './author/reducer';
 import Authors from './components/author/Authors';
 
 const AuthorScreen = ({ data, authors }) => {
-  console.log('dataofauthors', data);
   useEffect(() => {
     authors();
   }, []);
@@ -13,9 +12,8 @@ const AuthorScreen = ({ data, authors }) => {
     <div className='mainDivPost'>
       <div className='headingDiv'>Authors</div>
       {data.map((item) => {
-        console.log('item.name', item);
         return (
-          <Authors
+          <Authors key={item.id}
             authorName={item.name}
             authorContact={item.phone}
             authorEmail={item.email}

@@ -9,7 +9,6 @@ import "./components/comments/comments.css";
 
 const CommentScreen = ({ data, comments, state }) => {
   const history = new useHistory();
-  console.log("history",history.location);
 
   useEffect(() => {
     comments();
@@ -26,7 +25,7 @@ const CommentScreen = ({ data, comments, state }) => {
       <div className='headingDiv'>Post Comments</div>
       {data.map((item) => {
         return (
-          <Comments
+          <Comments key={item.id}
             commentAuthorName={item.name}
             commentEmail={item.email}
             commentBody={item.body}
