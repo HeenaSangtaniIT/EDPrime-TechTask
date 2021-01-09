@@ -23,12 +23,16 @@ const CardScreen = ({ data, error, isLoading, card }) => {
       <div>
         <nav className="navBar">
           <ul className="navBarUL">
-            <li className="navBarLI">
-              <Link to="/">Posts</Link>
-            </li>
-            <li className="navBarLI">
-              <Link to="/users">Authors</Link>
-            </li>
+            <Link to="/">
+              <li className="navBarLI">
+                Posts
+              </li>
+            </Link>
+            <Link to="/users">
+              <li className="navBarLI">
+                Authors
+              </li>
+            </Link>
           </ul>
         </nav>
         

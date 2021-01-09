@@ -8,6 +8,7 @@
   border: 1px solid #cccddd;
   margin: 2%;
   border-radius: 10px;
+  cursor: pointerc;
 }
 
 .postLink {
@@ -35,13 +36,16 @@
 }
 .navBarLI {
   float: left;
-  width: 30%;
+  width: 42%;
   list-style-type: none;
   font-weight: 700;
   text-align: center;
   margin-left: -10px;
+  background-color: #ccc;
+  padding: 10px;
+  border: #ffff 1px solid;
 }
-.navBarLI a {
+.navBarUL a {
   text-decoration: none;
   color: blue;
 }
